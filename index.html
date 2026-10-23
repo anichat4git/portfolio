@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anindita Chattopadhyay, AI Product Executive</title>
+<meta name="description" content="Anindita Chattopadhyay takes enterprise AI from proof of concept to enterprise-grade products, built on AI-ready data, orchestrated agents and a business model that scales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F5; --surface:#FFFFFF; --ink:#16213A; --muted:#536071;
+  --line:#CDD6D4; --teal:#1F6F78; --teal-soft:#DCEBEB; --gold:#D99A00; --gold-soft:#F6E7C1;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1724; --surface:#162133; --ink:#E9EEF2; --muted:#9DAAB8;
+    --line:#2A3A50; --teal:#62B7C0; --teal-soft:#183340; --gold:#F0B429; --gold-soft:#3A3018;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1724; --surface:#162133; --ink:#E9EEF2; --muted:#9DAAB8;
+  --line:#2A3A50; --teal:#62B7C0; --teal-soft:#183340; --gold:#F0B429; --gold-soft:#3A3018;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif; font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit; color:inherit; cursor:pointer}
+a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+svg{max-width:100%}
+.wrap{max-width:1120px; margin:0 auto; padding:0 1.5rem}
+.icon{width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* Header */
+.site-header{padding:1.5rem 0}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+.name{font-weight:700; text-decoration:none; font-size:1.05rem}
+nav ul{list-style:none; display:flex; gap:1.4rem; margin:0; padding:0; flex-wrap:wrap}
+nav a{text-decoration:none; color:var(--muted); font-weight:500; font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.cta-top{display:inline-block; background:var(--gold); color:#16213A; padding:.65rem 1.15rem; border-radius:999px; font-weight:700; text-decoration:none; font-size:.95rem; white-space:nowrap; box-shadow:0 0 0 3px var(--gold-soft)}
+.cta-top:hover{transform:translateY(-1px)}
+.head-right{display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap}
+
+/* Hero */
+.hero{padding:2.5rem 0 4rem}
+.hero .wrap{display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; align-items:center}
+.hero h1{font-size:clamp(2.3rem,5vw,3.8rem); line-height:1.04; letter-spacing:-0.035em; font-weight:800; margin:0 0 1.25rem; max-width:15ch}
+.hero p.sub{font-size:1.2rem; color:var(--muted); max-width:32ch; margin:0 0 2rem}
+.actions{display:flex; gap:.9rem; flex-wrap:wrap}
+.btn{display:inline-block; padding:.8rem 1.3rem; border-radius:999px; font-weight:600; text-decoration:none; font-size:.98rem; border:2px solid var(--ink)}
+.btn.primary{background:var(--ink); color:var(--bg)}
+.btn.secondary{background:transparent; color:var(--ink)}
+
+.system{margin:0}
+.system svg{width:100%; height:auto; display:block}
+.system .col-label{fill:var(--muted); font-size:12.5px; font-weight:600}
+.system .node-label{fill:var(--ink); font-size:12.5px; font-weight:500}
+.system .dot{fill:var(--teal)}
+.system .pill{fill:var(--surface); stroke:var(--teal); stroke-width:1.5}
+.system .link{stroke:var(--teal); stroke-width:1.2; fill:none; opacity:.55}
+.system .orch{stroke:var(--teal); stroke-width:1.5; stroke-dasharray:3 4; fill:none}
+.system .out{stroke:var(--gold); stroke-width:2; fill:none}
+.system .product{fill:var(--gold)}
+.system .ready{fill:var(--teal); fill-opacity:.14; stroke:var(--teal); stroke-width:1.5}
+.system .ready-label{fill:var(--teal); font-size:11.5px; font-weight:600}
+.system .hit{fill:var(--teal); fill-opacity:0; cursor:pointer; transition:fill-opacity .2s}
+.system .hit:hover, .system .hit:focus-visible{fill-opacity:.08; outline:none}
+.system figcaption{font-size:.9rem; color:var(--muted); margin-top:.6rem}
+.draw{stroke-dasharray:1; stroke-dashoffset:1; animation:draw 1s ease forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.7s}.d3{animation-delay:1.2s}.d4{animation-delay:1.7s}
+.pop{transform-origin:690px 190px; transform:scale(0); animation:pop .5s cubic-bezier(.2,1.4,.4,1) 2.3s forwards}
+.system .step-agent{fill:var(--teal)}
+.system .step-human{fill:var(--surface); stroke:var(--muted); stroke-width:1.5}
+.system .wf{stroke:var(--muted); stroke-width:1.2; fill:none}
+.system .small-label{fill:var(--muted); font-size:11px}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{transform:scale(1)}}
+
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.7rem,3vw,2.3rem); letter-spacing:-0.025em; line-height:1.15; margin:0 0 1.75rem; font-weight:800}
+.hint{font-size:.95rem; color:var(--muted); margin:-1rem 0 1.5rem}
+
+/* Stack explorer */
+.tabs{display:grid; grid-template-columns:repeat(5,1fr); gap:.75rem; margin-bottom:1rem}
+.tab{display:flex; flex-direction:column; align-items:flex-start; gap:.75rem; text-align:left; padding:1.1rem 1.1rem 1.2rem; border-radius:16px; border:1px solid var(--line); background:var(--surface); transition:background .2s, color .2s, transform .2s}
+.tab .badge{width:46px; height:46px; border-radius:12px; display:grid; place-items:center; background:var(--teal-soft); color:var(--teal)}
+.tab .t{font-weight:700; font-size:1.02rem; line-height:1.25}
+.tab .n{font-size:.82rem; color:var(--muted); font-weight:600}
+.tab:hover{transform:translateY(-2px)}
+.tab[aria-selected="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.tab[aria-selected="true"] .badge{background:var(--gold); color:#16213A}
+.tab[aria-selected="true"] .n{color:var(--bg); opacity:.7}
+.panel{display:grid; grid-template-columns:1.1fr 1fr 1.2fr; gap:2rem; padding:2rem; border-radius:20px; background:var(--surface); border:1px solid var(--line); align-items:center}
+.panel .big{font-size:clamp(2.4rem,5vw,3.6rem); font-weight:800; letter-spacing:-0.04em; line-height:1; color:var(--teal)}
+.panel .big.small{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.panel .cap{font-size:.95rem; color:var(--muted); margin-top:.5rem; max-width:28ch}
+.panel .def{font-size:1.25rem; font-weight:600; line-height:1.4; letter-spacing:-0.01em}
+.panel .where{font-size:.85rem; color:var(--muted); font-weight:600; margin:0 0 .6rem}
+.cos{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; margin:0}
+.cos li{font-size:.88rem; padding:.35rem .8rem; border-radius:999px; border:1px solid var(--line); color:var(--muted); transition:all .25s}
+.cos li.on{background:var(--gold-soft); border-color:var(--gold); color:var(--ink); font-weight:600}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+
+/* Journey */
+.journey-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; flex-wrap:wrap}
+.journey-head h2{margin-bottom:1.75rem}
+.arrows{display:flex; gap:.5rem; margin-bottom:1.75rem}
+.arrow{width:46px; height:46px; border-radius:50%; border:2px solid var(--ink); background:transparent; display:grid; place-items:center}
+.arrow svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.track{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(260px, 300px); gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding:.25rem 1.5rem 1.5rem; margin:0 -1.5rem; scrollbar-width:thin; overscroll-behavior-x:contain}
+.card{scroll-snap-align:start; border-radius:20px; padding:1.5rem; background:var(--surface); border:1px solid var(--line); display:flex; flex-direction:column; gap:.6rem; min-height:300px; position:relative}
+.card .yr{font-size:2.6rem; font-weight:800; letter-spacing:-0.04em; color:var(--gold); line-height:1}
+.card .co{font-weight:700; font-size:1.15rem; line-height:1.25}
+.card .what{color:var(--muted); font-size:.95rem; line-height:1.45; flex:1}
+.card .metric{font-size:1.5rem; font-weight:800; letter-spacing:-0.02em; color:var(--teal); line-height:1.1}
+.card .layers{display:flex; gap:5px}
+.card .layers i{width:22px; height:6px; border-radius:3px; background:var(--line)}
+.card .layers i.on{background:var(--teal)}
+.card .layers i.on.g{background:var(--gold)}
+.card a.req{font-size:.88rem; color:var(--muted); text-underline-offset:3px}
+.card a.req:hover{color:var(--ink)}
+.card.feature{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.card.feature .what, .card.feature a.req{color:var(--bg); opacity:.8}
+.card.feature .metric{color:var(--gold)}
+.legend{display:flex; gap:1.25rem; flex-wrap:wrap; font-size:.85rem; color:var(--muted)}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.legend i{width:22px; height:6px; border-radius:3px; background:var(--teal); display:inline-block}
+.legend i.g{background:var(--gold)}
+
+/* Quote carousel */
+.praise{background:var(--surface)}
+.qbox{display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:start; max-width:900px}
+.qmark{font-size:7rem; line-height:.8; font-weight:800; color:var(--gold)}
+.qtext{font-size:clamp(1.4rem,2.8vw,2rem); font-weight:700; line-height:1.3; letter-spacing:-0.02em; margin:0 0 1.25rem}
+.qwho{color:var(--muted); font-size:.98rem}
+.qnav{display:flex; align-items:center; gap:.6rem; margin-top:2rem}
+.qdot{width:12px; height:12px; border-radius:50%; border:2px solid var(--ink); background:transparent; padding:0}
+.qdot[aria-current="true"]{background:var(--ink)}
+
+/* Services */
+.service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
+.service{padding:1.4rem; border-radius:18px; border:1px solid var(--line); background:var(--surface)}
+.service .badge{width:46px; height:46px; border-radius:12px; display:grid; place-items:center; background:var(--gold-soft); color:var(--ink); margin-bottom:1rem}
+.service h3{margin:0 0 .3rem; font-size:1.08rem; line-height:1.3}
+.service p{margin:0; color:var(--muted); font-size:.93rem; line-height:1.45}
+
+/* Services bento */
+.svc-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1rem 2rem; flex-wrap:wrap; margin-bottom:1.75rem}
+.svc-head h2{margin:0}
+.svc-head p{margin:0; color:var(--muted); max-width:34ch}
+.svc-grid{display:grid; grid-template-columns:1.25fr 1fr 1fr; grid-template-areas:"a b c" "a d e"; gap:1rem}
+.svc{position:relative; overflow:hidden; border-radius:22px; padding:1.75rem; display:flex; flex-direction:column; gap:.6rem; min-height:230px; border:1px solid var(--line); background:var(--surface)}
+.svc > *{position:relative}
+.svc .svc-bg{position:absolute; right:-28px; top:-28px; width:170px; height:170px; fill:none; stroke:currentColor; stroke-width:.9; opacity:.1; stroke-linecap:round; stroke-linejoin:round}
+.s1{grid-area:a; background:var(--ink); color:var(--bg); border-color:var(--ink); justify-content:flex-end; min-height:476px}
+.s1 .svc-bg{width:340px; height:340px; right:-60px; top:-50px; stroke:var(--gold); opacity:.22}
+.s2{grid-area:b; background:var(--teal-soft); border-color:transparent}
+.s3{grid-area:c; background:var(--gold-soft); border-color:transparent}
+.s4{grid-area:d; background:var(--gold-soft); border-color:transparent}
+.s5{grid-area:e; background:var(--teal-soft); border-color:transparent}
+.svc-icon{width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:var(--surface); color:var(--teal)}
+.s1 .svc-icon{background:var(--gold); color:#16213A}
+.svc h3{margin:.5rem 0 0; font-size:1.3rem; line-height:1.25; letter-spacing:-0.01em}
+.s1 h3{font-size:clamp(1.7rem,2.8vw,2.2rem); line-height:1.12; letter-spacing:-0.025em}
+.svc p{margin:0; color:var(--muted); line-height:1.5; max-width:34ch}
+.s1 p{color:var(--bg); opacity:.85; font-size:1.1rem}
+.svc-tag{position:absolute !important; top:1.5rem; left:1.75rem; font-size:.82rem; font-weight:700; padding:.3rem .75rem; border-radius:999px; background:var(--gold); color:#16213A}
+.svc-cta{margin-top:auto; padding-top:.9rem; font-weight:700; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:2px; text-decoration-color:var(--gold); align-self:flex-start}
+.s1 .svc-cta{margin-top:1.25rem; background:var(--gold); color:#16213A; text-decoration:none; padding:.8rem 1.3rem; border-radius:999px}
+@media (max-width: 960px){ .svc-grid{grid-template-columns:1fr 1fr; grid-template-areas:"a a" "b c" "d e"} .s1{min-height:340px} }
+@media (max-width: 600px){ .svc-grid{grid-template-columns:1fr; grid-template-areas:"a" "b" "c" "d" "e"} .s1{min-height:320px} }
+
+/* About */
+.about .wrap{display:grid; grid-template-columns:auto 1fr; gap:3rem; align-items:center}
+.portrait{width:200px; height:200px; border-radius:50%; background:var(--teal); color:var(--bg); display:grid; place-items:center; font-size:3.6rem; font-weight:800; letter-spacing:-0.04em}
+.about h2{margin-bottom:.75rem}
+.about p.big{font-size:1.35rem; line-height:1.45; font-weight:600; letter-spacing:-0.01em; margin:0 0 1.25rem; max-width:40ch}
+.facts{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.5rem}
+.facts li{font-size:.88rem; padding:.35rem .8rem; border-radius:999px; border:1px solid var(--line); color:var(--muted)}
+
+/* Contact */
+.contact{background:var(--ink); color:var(--bg)}
+.contact h2{max-width:20ch; margin-bottom:1rem}
+.contact p{opacity:.85; margin:0 0 2rem}
+.contact .btn.primary{background:var(--gold); color:#16213A; border-color:var(--gold)}
+.contact .btn.secondary{color:var(--bg); border-color:var(--bg)}
+footer{padding:2rem 0; font-size:.9rem; color:var(--muted)}
+
+/* Booking view */
+.book{padding:1.5rem 0 5rem}
+.book .wrap{display:grid; grid-template-columns:1fr 1.25fr; gap:3.5rem; align-items:start}
+.back{display:inline-block; font-size:.95rem; color:var(--muted); text-decoration:none; margin-bottom:1.5rem}
+.back:hover{color:var(--ink)}
+.book h1{font-size:clamp(2.2rem,4.5vw,3.3rem); line-height:1.05; letter-spacing:-0.03em; font-weight:800; margin:0 0 1rem; outline:none}
+.book .intro > p{color:var(--muted); max-width:36ch; font-size:1.1rem; margin:0}
+.expect{list-style:none; padding:0; margin:2rem 0 0; display:grid; gap:1rem}
+.expect li{display:flex; gap:.9rem; align-items:center; font-weight:500}
+.expect .badge{flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--teal-soft); color:var(--teal)}
+.expect .icon{width:22px; height:22px}
+.form-card{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:2rem}
+.form-card fieldset{border:0; padding:0; margin:0 0 1.5rem; min-width:0}
+.form-card legend, .lbl{font-weight:600; font-size:.95rem; margin:0 0 .6rem; padding:0; display:block}
+.opt{color:var(--muted); font-weight:400}
+.chips{display:flex; flex-wrap:wrap; gap:.5rem}
+.chip-opt{position:relative}
+.chip-opt input{position:absolute; opacity:0; width:1px; height:1px}
+.chip-opt span{display:inline-block; padding:.5rem .95rem; border-radius:999px; border:1.5px solid var(--line); font-size:.93rem; cursor:pointer; background:var(--bg); transition:background .15s, color .15s}
+.chip-opt input:checked + span{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.chip-opt input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
+.field{margin-bottom:1.1rem}
+.field input, .field textarea{width:100%; font:inherit; font-size:1rem; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:12px; padding:.75rem .9rem}
+.field textarea{min-height:110px; resize:vertical}
+.field input:focus, .field textarea:focus{outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-soft)}
+.field.invalid input, fieldset.invalid .chips{border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-soft); border-radius:12px}
+.err{font-size:.86rem; font-weight:600; margin:.4rem 0 0; display:none}
+.invalid .err{display:block}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+.tz{font-size:.86rem; color:var(--muted); margin:.5rem 0 0}
+.submit{width:100%; border:0; background:var(--gold); color:#16213A; font-weight:700; font-size:1.02rem; padding:1rem 1.2rem; border-radius:999px; margin-top:.5rem}
+.submit:hover{filter:brightness(1.05)}
+.fine{font-size:.86rem; color:var(--muted); margin:.9rem 0 0; text-align:center}
+.done h2{margin-bottom:.75rem}
+.done p{color:var(--muted); margin:0 0 1.25rem}
+.done textarea{width:100%; min-height:220px; font:inherit; font-size:.92rem; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:12px; padding:.9rem}
+.done .row{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+.done .btn{background:transparent; cursor:pointer}
+.done .btn.primary{background:var(--ink); color:var(--bg)}
+@media (max-width: 900px){ .book .wrap{grid-template-columns:1fr; gap:2rem} }
+@media (max-width: 600px){ .two{grid-template-columns:1fr; gap:0} .form-card{padding:1.35rem} }
+footer .wrap{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+
+@media (prefers-reduced-motion: reduce){
+  .draw{animation:none; stroke-dashoffset:0}
+  .pop{animation:none; transform:none}
+  .fade{animation:none}
+  .tab, .cos li{transition:none}
+  html{scroll-behavior:auto}
+}
+@media (max-width: 960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .tabs{grid-template-columns:repeat(3,1fr)}
+  .panel{grid-template-columns:1fr; gap:1.25rem; padding:1.5rem}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .about .wrap{grid-template-columns:1fr; gap:1.5rem}
+  .portrait{width:140px; height:140px; font-size:2.6rem}
+}
+@media (max-width: 600px){
+  section{padding:3.25rem 0}
+  .tabs{grid-template-columns:repeat(2,1fr)}
+  .tab{padding:.9rem}
+  .tab .badge{width:40px; height:40px}
+  .service-grid{grid-template-columns:1fr}
+  .qbox{grid-template-columns:1fr; gap:.5rem}
+  .qmark{font-size:4.5rem}
+  .arrows{display:none}
+  nav ul{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="name" href="#top">Anindita Chattopadhyay</a>
+    <div class="head-right">
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#stack">Approach</a></li>
+        <li><a href="#journey">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="cta-top" href="#book">Schedule a conversation</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Enterprise AI works when data, agents and people work as one system.</h1>
+        <p class="sub">I take AI from pilot to products that teams adopt and pay for.</p>
+        <div class="actions">
+          <a class="btn primary" href="#services">Ways to work together</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <figure class="system">
+        <svg viewBox="0 0 760 360" role="img" aria-labelledby="sys-title sys-desc">
+          <title id="sys-title">From data sources to a product people adopt</title>
+          <desc id="sys-desc">Four data sources flow into one AI-ready data layer. Workflows are mapped to find where agents fit, three coordinated agents take on those steps, and together they power one product a team uses.</desc>
+          <text class="col-label" x="80" y="26" text-anchor="middle">Data</text><text class="col-label" x="80" y="42" text-anchor="middle">sources</text>
+          <text class="col-label" x="225" y="26" text-anchor="middle">AI-ready</text><text class="col-label" x="225" y="42" text-anchor="middle">data</text>
+          <text class="col-label" x="325" y="26" text-anchor="middle">Agentic</text><text class="col-label" x="325" y="42" text-anchor="middle">transformation</text>
+          <text class="col-label" x="485" y="26" text-anchor="middle">Orchestration</text><text class="col-label" x="485" y="42" text-anchor="middle">and agents</text>
+          <text class="col-label" x="690" y="26" text-anchor="middle">Product and</text><text class="col-label" x="690" y="42" text-anchor="middle">commercialization</text>
+          <path class="link draw d1" pathLength="1" d="M135 90 L205 90"/>
+          <path class="link draw d1" pathLength="1" d="M135 160 L205 160"/>
+          <path class="link draw d1" pathLength="1" d="M135 230 L205 230"/>
+          <path class="link draw d1" pathLength="1" d="M135 300 L205 300"/>
+          <circle class="dot" cx="135" cy="90" r="6"/><text class="node-label" x="123" y="94" text-anchor="end">Client data</text>
+          <circle class="dot" cx="135" cy="160" r="6"/><text class="node-label" x="123" y="164" text-anchor="end">Partner data</text>
+          <circle class="dot" cx="135" cy="230" r="6"/><text class="node-label" x="123" y="234" text-anchor="end">Knowledge base</text>
+          <circle class="dot" cx="135" cy="300" r="6"/><text class="node-label" x="123" y="304" text-anchor="end">Live signals</text>
+          <rect class="ready" x="205" y="66" width="40" height="248" rx="20"/>
+          <text class="ready-label" x="225" y="194" text-anchor="middle" transform="rotate(-90 225 190)">Unified, governed, in context</text>
+          <path class="link draw d2" pathLength="1" d="M245 90 L312 90"/>
+          <path class="link draw d2" pathLength="1" d="M245 160 L312 160"/>
+          <path class="link draw d2" pathLength="1" d="M245 230 L312 230"/>
+          <path class="link draw d2" pathLength="1" d="M245 300 L312 300"/>
+          <path class="wf" d="M325 103 L325 147 M325 173 L325 217 M325 243 L325 287"/>
+          <rect class="step-agent" x="312" y="77" width="26" height="26" rx="7"/>
+          <rect class="step-human" x="312" y="147" width="26" height="26" rx="7"/>
+          <rect class="step-agent" x="312" y="217" width="26" height="26" rx="7"/>
+          <rect class="step-agent" x="312" y="287" width="26" height="26" rx="7"/>
+          <text class="small-label" x="325" y="340" text-anchor="middle">Where agents fit</text>
+          <path class="link draw d3" pathLength="1" d="M338 90 C370 90 380 110 410 110"/>
+          <path class="link draw d3" pathLength="1" d="M338 230 C370 230 380 190 410 190"/>
+          <path class="link draw d3" pathLength="1" d="M338 300 C370 300 380 270 410 270"/>
+          <path class="orch" d="M485 126 L485 174"/>
+          <path class="orch" d="M485 206 L485 254"/>
+          <rect class="pill" x="410" y="94" width="150" height="32" rx="16"/><text class="node-label" x="485" y="114" text-anchor="middle">Research agent</text>
+          <rect class="pill" x="410" y="174" width="150" height="32" rx="16"/><text class="node-label" x="485" y="194" text-anchor="middle">Planning agent</text>
+          <rect class="pill" x="410" y="254" width="150" height="32" rx="16"/><text class="node-label" x="485" y="274" text-anchor="middle">Activation agent</text>
+          <path class="out draw d4" pathLength="1" d="M560 110 C610 110 625 190 660 190"/>
+          <path class="out draw d4" pathLength="1" d="M560 190 L660 190"/>
+          <path class="out draw d4" pathLength="1" d="M560 270 C610 270 625 190 660 190"/>
+          <circle class="product pop" cx="690" cy="190" r="30"/>
+          <text class="node-label" x="690" y="244" text-anchor="middle">Your team</text>
+          <text class="node-label" x="690" y="260" text-anchor="middle">adopts it</text>
+          <rect class="hit" data-layer="0" x="10" y="14" width="150" height="330" rx="14" tabindex="0" role="button" aria-label="Explore data sources"/>
+          <rect class="hit" data-layer="1" x="185" y="14" width="80" height="330" rx="14" tabindex="0" role="button" aria-label="Explore AI-ready data"/>
+          <rect class="hit" data-layer="2" x="280" y="14" width="90" height="336" rx="14" tabindex="0" role="button" aria-label="Explore agentic transformation"/>
+          <rect class="hit" data-layer="3" x="400" y="14" width="170" height="330" rx="14" tabindex="0" role="button" aria-label="Explore orchestration and agents"/>
+          <rect class="hit" data-layer="4" x="620" y="14" width="135" height="330" rx="14" tabindex="0" role="button" aria-label="Explore product and commercialization"/>
+        </svg>
+        <figcaption>Tap any stage to explore it.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="svc-head">
+        <h2 id="services-title">Ways we can work together</h2>
+        <p>A role, a project or a team session: here is where to start.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc s1">
+          <svg class="svc-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.6L20 9.5l-4.5 3.8L17 19l-5-3-5 3 1.5-5.7L4 9.5l5.8-.9z"/></svg>
+          <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.6L20 9.5l-4.5 3.8L17 19l-5-3-5 3 1.5-5.7L4 9.5l5.8-.9z"/></svg></div>
+          <h3>Have an opportunity that fits?</h3>
+          <p>If you are building something where this experience matters, I would be happy to hear about it.</p>
+          <a class="svc-cta" href="#book" data-topic="An opportunity">Tell me about it</a>
+        </article>
+        <article class="svc s2">
+          <svg class="svc-bg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+          <h3>Agentic readiness assessment</h3>
+          <p>Map your workflows, find where agents fit, and check the data is ready.</p>
+          <a class="svc-cta" href="#book" data-topic="Advisory or consulting">Discuss an assessment</a>
+        </article>
+        <article class="svc s3">
+          <svg class="svc-bg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c4 0 4-12 8-12s4 12 8 12"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="18" r="1.5"/></svg>
+          <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c4 0 4-12 8-12s4 12 8 12"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="18" r="1.5"/></svg></div>
+          <h3>Orchestration roadmap</h3>
+          <p>Which agents to build and how they work together.</p>
+          <a class="svc-cta" href="#book" data-topic="Advisory or consulting">Discuss this</a>
+        </article>
+        <article class="svc s4">
+          <svg class="svc-bg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>
+          <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div>
+          <h3>Fractional product leadership</h3>
+          <p>Senior AI product leadership while you build your team.</p>
+          <a class="svc-cta" href="#book" data-topic="Advisory or consulting">Discuss this</a>
+        </article>
+        <article class="svc s5">
+          <svg class="svc-bg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c.8-3 3.2-5 6-5s5.2 2 6 5M10 20c.8-3 3.2-5 6-5s5.2 2 6 5"/></svg>
+          <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c.8-3 3.2-5 6-5s5.2 2 6 5M10 20c.8-3 3.2-5 6-5s5.2 2 6 5"/></svg></div>
+          <h3>Team workshops</h3>
+          <p>Hands-on agentic product management for your product and leadership teams.</p>
+          <a class="svc-cta" href="#book" data-topic="Workshop or speaking">Plan a workshop</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" aria-labelledby="stack-title">
+    <div class="wrap">
+      <h2 id="stack-title">Explore the stack</h2>
+      <p class="hint">Most enterprise AI stalls somewhere in this chain. Pick a layer.</p>
+      <div class="tabs" role="tablist" aria-label="Layers">
+        <button class="tab" role="tab" id="tab-0" aria-controls="panel" aria-selected="true">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <span><span class="n">Layer 1</span><br><span class="t">Data sources</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-1" aria-controls="panel" aria-selected="false" tabindex="-1">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg></span>
+          <span><span class="n">Layer 2</span><br><span class="t">AI-ready data</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="panel" aria-selected="false" tabindex="-1">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v3a2 2 0 0 0 2 2H14"/><path d="M17.5 3.5v3M16 5h3"/></svg></span>
+          <span><span class="n">Layer 3</span><br><span class="t">Agentic transformation</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="panel" aria-selected="false" tabindex="-1">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></svg></span>
+          <span><span class="n">Layer 4</span><br><span class="t">Orchestration and agents</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-4" aria-controls="panel" aria-selected="false" tabindex="-1">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></span>
+          <span><span class="n">Layer 5</span><br><span class="t">Product and commercialization</span></span>
+        </button>
+      </div>
+      <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+        <div><div class="big" id="p-big"></div><div class="cap" id="p-cap"></div></div>
+        <div class="def" id="p-def"></div>
+        <div>
+          <p class="where">Where I built it</p>
+          <ul class="cos" id="p-cos">
+            <li>Weber Shandwick</li><li>Publicis Sapient</li><li>GroupM (WPP Media)</li><li>Wayfair</li><li>Hubzu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="praise" aria-labelledby="praise-title">
+    <div class="wrap">
+      <h2 id="praise-title" class="sr">What colleagues say</h2>
+      <div class="qbox">
+        <div class="qmark" aria-hidden="true">“</div>
+        <figure style="margin:0" aria-live="polite">
+          <blockquote class="qtext" id="q-text">Anindita is thoughtful, collaborative, and highly effective at turning strategy into coordinated action.</blockquote>
+          <figcaption class="qwho" id="q-who">Fellow Product Lead, Core AI, Publicis Sapient</figcaption>
+          <div class="qnav" role="group" aria-label="Choose a quote">
+            <button class="qdot" aria-label="Quote 1" aria-current="true"></button>
+            <button class="qdot" aria-label="Quote 2"></button>
+            <button class="qdot" aria-label="Quote 3"></button>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" aria-labelledby="journey-title">
+    <div class="wrap">
+      <div class="journey-head">
+        <h2 id="journey-title">From engineer to AI product executive</h2>
+        <div class="arrows">
+          <button class="arrow" id="prev" aria-label="Scroll back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow" id="next" aria-label="Scroll forward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="track" id="track" tabindex="0" aria-label="Career journey, most recent first, scroll sideways">
+        <article class="card feature">
+          <div class="yr">2025</div>
+          <div class="co">Weber Shandwick</div>
+          <div class="what">Led agentic products from proof of concept to enterprise grade, as EVP of Products.</div>
+          <div class="metric">Pilot to production</div>
+          <div class="layers" aria-label="Layers: AI-ready data, transformation, orchestration, product"><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on g"></i></div>
+          <a class="req" href="mailto:anindita.piu@gmail.com?subject=Case%20study%20request%3A%20Agentic%20products">Case study on request</a>
+        </article>
+        <article class="card">
+          <div class="yr">2025</div>
+          <div class="co">Publicis Sapient</div>
+          <div class="what">Led agentic planning products in the Core AI suite.</div>
+          <div class="metric">Agent-to-agent</div>
+          <div class="layers" aria-label="Layers: sources, transformation, orchestration, product"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on g"></i></div>
+          <a class="req" href="mailto:anindita.piu@gmail.com?subject=Case%20study%20request%3A%20Agentic%20media%20planning">Case study on request</a>
+        </article>
+        <article class="card">
+          <div class="yr">2018</div>
+          <div class="co">GroupM (WPP Media)</div>
+          <div class="what">Unified a consumer data platform, then scaled clean rooms and data collaboration with Amazon, Walmart, Instacart and publishers.</div>
+          <div class="metric">37 markets</div>
+          <div class="layers" aria-label="Layers: all five"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on g"></i></div>
+          <a class="req" href="mailto:anindita.piu@gmail.com?subject=Case%20study%20request%3A%20Data%20platforms%20and%20clean%20rooms">Case study on request</a>
+        </article>
+        <article class="card">
+          <div class="yr">2017</div>
+          <div class="co">Wayfair</div>
+          <div class="what">Rebuilt legacy supplier tools into simpler workflows.</div>
+          <div class="metric">+30% supplier NPS</div>
+          <div class="layers" aria-label="Layers: product"><i></i><i></i><i></i><i></i><i class="on g"></i></div>
+          <a class="req" href="mailto:anindita.piu@gmail.com?subject=Case%20study%20request%3A%20Supplier%20platform">Case study on request</a>
+        </article>
+        <article class="card">
+          <div class="yr">2014</div>
+          <div class="co">Hubzu</div>
+          <div class="what">Designed a listing quality system for an online property marketplace.</div>
+          <div class="metric">55% → 35% bounce</div>
+          <div class="layers" aria-label="Layers: transformation, product"><i></i><i></i><i class="on"></i><i></i><i class="on g"></i></div>
+        </article>
+        <article class="card">
+          <div class="yr">2005</div>
+          <div class="co">Engineer and analyst</div>
+          <div class="what">Wrote code for web, mobile and in-store kiosks, then moved into data analytics.</div>
+          <div class="metric">Code first</div>
+        </article>
+      </div>
+      <div class="legend"><span><i></i>Bars show the five layers each role covered</span><span><i class="g"></i>Product</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="portrait" aria-hidden="true">AC</div>
+      <div>
+        <h2 id="about-title">About</h2>
+        <p class="big">Seventeen addresses I have called home taught me the greatest skill of all: adaptability.</p>
+        <p style="margin:0 0 1.25rem; color:var(--muted); max-width:52ch">I wrote code long before I wrote roadmaps, and I still build today.</p>
+        <ul class="facts" aria-label="Industries and focus areas">
+          <li>AI products</li>
+          <li>Data platforms</li>
+          <li>Media and advertising</li>
+          <li>Marketing and communications</li>
+          <li>Commerce</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Working on moving AI from pilot to production?</h2>
+      <p>I would enjoy hearing about it.</p>
+      <div class="actions">
+        <a class="btn primary" href="#book">Schedule a conversation</a>
+        <a class="btn secondary" href="mailto:anindita.piu@gmail.com" target="_blank" rel="noopener">Email me</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/aninditachattopadhyay/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+      <p style="margin:1.5rem 0 0; opacity:.85">Or write directly to anindita.piu@gmail.com</p>
+    </div>
+  </section>
+</main>
+
+<div id="book-view" hidden>
+  <section class="book" aria-labelledby="book-title">
+    <div class="wrap">
+      <div class="intro">
+        <a class="back" href="#top">← Back to the site</a>
+        <h1 id="book-title" tabindex="-1">Schedule a conversation</h1>
+        <p>Tell me a little about what you have in mind and when suits you. I will reply personally to confirm a time.</p>
+        <ul class="expect">
+          <li><span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>20 or 30 minutes, your choice</li>
+          <li><span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span>Video or phone</li>
+          <li><span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg></span>A personal reply to confirm the time</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <form id="book-form" novalidate>
+          <fieldset id="fs-topic">
+            <legend>What would you like to talk about?</legend>
+            <div class="chips">
+              <label class="chip-opt"><input type="radio" name="topic" value="An opportunity"><span>An opportunity</span></label>
+              <label class="chip-opt"><input type="radio" name="topic" value="Advisory or consulting"><span>Advisory or consulting</span></label>
+              <label class="chip-opt"><input type="radio" name="topic" value="Workshop or speaking"><span>Workshop or speaking</span></label>
+              <label class="chip-opt"><input type="radio" name="topic" value="Something else"><span>Something else</span></label>
+            </div>
+            <p class="err">Choose a topic.</p>
+          </fieldset>
+
+          <div class="two">
+            <fieldset>
+              <legend>Length</legend>
+              <div class="chips">
+                <label class="chip-opt"><input type="radio" name="length" value="20 minutes"><span>20 min</span></label>
+                <label class="chip-opt"><input type="radio" name="length" value="30 minutes" checked><span>30 min</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Format</legend>
+              <div class="chips">
+                <label class="chip-opt"><input type="radio" name="format" value="Video call" checked><span>Video</span></label>
+                <label class="chip-opt"><input type="radio" name="format" value="Phone call"><span>Phone</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label class="lbl" for="f-date">Preferred date <span class="opt">(optional)</span></label>
+              <input type="date" id="f-date" name="date">
+            </div>
+            <fieldset>
+              <legend>Time of day <span class="opt">(optional)</span></legend>
+              <div class="chips">
+                <label class="chip-opt"><input type="checkbox" name="time" value="Morning"><span>Morning</span></label>
+                <label class="chip-opt"><input type="checkbox" name="time" value="Afternoon"><span>Afternoon</span></label>
+                <label class="chip-opt"><input type="checkbox" name="time" value="Evening"><span>Evening</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <p class="tz" id="tz-note" style="margin-top:-.75rem; margin-bottom:1.25rem"></p>
+
+          <div class="two">
+            <div class="field" id="fd-name">
+              <label class="lbl" for="f-name">Your name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" maxlength="120">
+              <p class="err">Enter your name.</p>
+            </div>
+            <div class="field" id="fd-email">
+              <label class="lbl" for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" maxlength="200">
+              <p class="err">Enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="f-company">Company and role <span class="opt">(optional)</span></label>
+            <input type="text" id="f-company" name="company" autocomplete="organization" maxlength="200">
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="f-msg">Anything I should know beforehand? <span class="opt">(optional)</span></label>
+            <textarea id="f-msg" name="message" maxlength="1500"></textarea>
+          </div>
+
+          <button class="submit" type="submit">Request a conversation</button>
+          <p class="fine">Your request goes directly to anindita.piu@gmail.com.</p>
+        </form>
+
+        <div class="done" id="book-done" hidden>
+          <h2 tabindex="-1" id="done-title">Almost there</h2>
+          <p id="done-msg"></p>
+          <label class="sr" for="done-text">Your request</label>
+          <textarea id="done-text" readonly></textarea>
+          <div class="row">
+            <button class="btn primary" type="button" id="done-copy">Copy request</button>
+            <button class="btn secondary" type="button" id="done-again">Edit request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer id="site-footer">
+  <div class="wrap">
+    <span>© 2026 Anindita Chattopadhyay</span>
+    <span>Data first. Orchestration next. Product always.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var layers = [
+    {big:"37", small:false, cap:"global markets on one data platform", def:"First-party, partner and third-party data, connected in a privacy-safe way.", cos:["GroupM (WPP Media)","Publicis Sapient"]},
+    {big:"$70K", small:false, cap:"saved each year by productizing data onboarding", def:"Structured, governed and in context, so agents can trust what they use.", cos:["Weber Shandwick","GroupM (WPP Media)"]},
+    {big:"$500K", small:false, cap:"saved each year by redesigning a business workflow", def:"Map how work really happens, find where agents can help, and start fast with no-code agents before building custom ones.", cos:["Weber Shandwick","Publicis Sapient","GroupM (WPP Media)","Hubzu"]},
+    {big:"Agent to agent", small:true, cap:"planning with partners’ agents", def:"One agent alone does very little. Agents, partners and people working as one workflow.", cos:["Weber Shandwick","Publicis Sapient","GroupM (WPP Media)"]},
+    {big:"+20%", small:false, cap:"customer engagement from a platform rebuild", def:"Repeatable, adopted and paid for, not rebuilt for every client.", cos:["Weber Shandwick","Publicis Sapient","GroupM (WPP Media)","Wayfair","Hubzu"]}
+  ];
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panel = document.getElementById('panel');
+  var big = document.getElementById('p-big'), cap = document.getElementById('p-cap'), def = document.getElementById('p-def');
+  var cos = Array.prototype.slice.call(document.querySelectorAll('#p-cos li'));
+
+  function select(i, focus){
+    var d = layers[i];
+    tabs.forEach(function(t, j){
+      t.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      t.tabIndex = j === i ? 0 : -1;
+    });
+    if (focus) tabs[i].focus();
+    panel.setAttribute('aria-labelledby', 'tab-' + i);
+    big.textContent = d.big; big.className = 'big' + (d.small ? ' small' : '');
+    cap.textContent = d.cap; def.textContent = d.def;
+    cos.forEach(function(li){ li.classList.toggle('on', d.cos.indexOf(li.textContent) > -1); });
+    panel.classList.remove('fade'); void panel.offsetWidth; panel.classList.add('fade');
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(i); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight') { e.preventDefault(); select((i + 1) % tabs.length, true); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); select((i + tabs.length - 1) % tabs.length, true); }
+    });
+  });
+  select(0);
+
+  Array.prototype.forEach.call(document.querySelectorAll('.system .hit'), function(h){
+    function go(){ select(+h.getAttribute('data-layer')); document.getElementById('stack').scrollIntoView(); }
+    h.addEventListener('click', go);
+    h.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+
+  var track = document.getElementById('track');
+  function step(dir){ var c = track.querySelector('.card'); var w = c ? c.getBoundingClientRect().width + 16 : 300; track.scrollBy({left: dir * w, behavior: 'smooth'}); }
+  document.getElementById('prev').addEventListener('click', function(){ step(-1); });
+  document.getElementById('next').addEventListener('click', function(){ step(1); });
+
+  var quotes = [
+    {t:"Anindita is thoughtful, collaborative, and highly effective at turning strategy into coordinated action.", w:"Fellow Product Lead, Core AI, Publicis Sapient"},
+    {t:"Anindita was always on top of every project, driving it to completion with little to no required oversight.", w:"Former manager, Hubzu and Owners.com"},
+    {t:"Her character has a perfect blend of technical enthusiasm and management expertise.", w:"Former team member, Hubzu"}
+  ];
+  var qt = document.getElementById('q-text'), qw = document.getElementById('q-who');
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.qdot'));
+  dots.forEach(function(d, i){
+    d.addEventListener('click', function(){
+      qt.textContent = quotes[i].t; qw.textContent = quotes[i].w;
+      dots.forEach(function(x, j){ if (j === i) x.setAttribute('aria-current', 'true'); else x.removeAttribute('aria-current'); });
+      qt.classList.remove('fade'); void qt.offsetWidth; qt.classList.add('fade');
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function(a){
+    a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.copy'), function(btn){
+    var label = btn.textContent;
+    function done(ok){
+      btn.textContent = ok ? 'Copied' : btn.getAttribute('data-email');
+      setTimeout(function(){ btn.textContent = label; }, 2500);
+    }
+    function fallback(){
+      try {
+        var t = document.createElement('textarea');
+        t.value = btn.getAttribute('data-email');
+        t.setAttribute('readonly', ''); t.style.position = 'absolute'; t.style.left = '-9999px';
+        document.body.appendChild(t); t.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(t); done(ok);
+      } catch (e) { done(false); }
+    }
+    btn.addEventListener('click', function(){
+      var email = btn.getAttribute('data-email');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function(){ done(true); }, fallback);
+      } else { fallback(); }
+    });
+  });
+
+  /* Booking view */
+  var FORM_ENDPOINT = ''; // When the site is on your own domain, paste a Formspree or Web3Forms endpoint here to send requests without the visitor's email app.
+  var OWNER_EMAIL = 'anindita.piu@gmail.com';
+  var mainEl = document.getElementById('top'), bookEl = document.getElementById('book-view'), footEl = document.getElementById('site-footer');
+  function route(){
+    var isBook = location.hash === '#book';
+    bookEl.hidden = !isBook; mainEl.hidden = isBook; footEl.hidden = isBook;
+    if (isBook) { window.scrollTo(0, 0); var h = document.getElementById('book-title'); if (h) h.focus({preventScroll:true}); }
+    else if (location.hash && location.hash.length > 1) {
+      try { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); } catch (e) {}
+    }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var tzNote = document.getElementById('tz-note');
+  if (tzNote) tzNote.textContent = tz ? 'Times are in your time zone (' + tz.replace(/_/g, ' ') + ').' : '';
+  var dateIn = document.getElementById('f-date');
+  try { var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); dateIn.min = d.toISOString().slice(0, 10); } catch (e) {}
+
+  var form = document.getElementById('book-form'), done = document.getElementById('book-done');
+  var doneMsg = document.getElementById('done-msg'), doneText = document.getElementById('done-text');
+  function val(name){ var el = form.querySelector('[name="' + name + '"]:checked'); return el ? el.value : ''; }
+  function copyText(text, btn){
+    var label = btn.textContent;
+    function show(ok){ btn.textContent = ok ? 'Copied' : 'Select the text above to copy'; setTimeout(function(){ btn.textContent = label; }, 2500); }
+    function fb(){ try { doneText.select(); show(document.execCommand('copy')); } catch (e) { show(false); } }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ show(true); }, fb); else fb();
+  }
+  function showDone(sent, text){
+    form.hidden = true; done.hidden = false; doneText.value = text;
+    document.getElementById('done-title').textContent = sent ? 'Thank you, your request is on its way' : 'Almost there';
+    doneMsg.textContent = sent
+      ? 'I will reply personally to confirm a time. A copy of your request is below.'
+      : 'Your email app should open with your request ready. Press send there to deliver it. If it did not open, copy the request below and email it to ' + OWNER_EMAIL + '.';
+    document.getElementById('done-title').focus();
+  }
+  document.getElementById('done-copy').addEventListener('click', function(){ copyText(doneText.value, this); });
+  document.getElementById('done-again').addEventListener('click', function(){ done.hidden = true; form.hidden = false; });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nameIn = document.getElementById('f-name'), emailIn = document.getElementById('f-email');
+    var name = nameIn.value.trim(), email = emailIn.value.trim(), topic = val('topic');
+    var okName = name.length > 0, okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), okTopic = !!topic;
+    document.getElementById('fd-name').classList.toggle('invalid', !okName);
+    document.getElementById('fd-email').classList.toggle('invalid', !okEmail);
+    document.getElementById('fs-topic').classList.toggle('invalid', !okTopic);
+    if (!okTopic) { form.querySelector('[name="topic"]').focus(); return; }
+    if (!okName) { nameIn.focus(); return; }
+    if (!okEmail) { emailIn.focus(); return; }
+    var times = Array.prototype.map.call(form.querySelectorAll('[name="time"]:checked'), function(c){ return c.value; });
+    var lines = [
+      'Conversation request', '',
+      'Name: ' + name,
+      'Email: ' + email,
+      'Company and role: ' + (form.company.value.trim() || 'Not given'),
+      'Topic: ' + topic,
+      'Length: ' + val('length'),
+      'Format: ' + val('format'),
+      'Preferred date: ' + (form.date.value || 'Flexible'),
+      'Preferred time: ' + (times.length ? times.join(', ') : 'Flexible') + (tz ? ' (' + tz + ')' : ''),
+      '', 'Message:', form.message.value.trim() || 'None'
+    ];
+    var text = lines.join('\n');
+    var subject = 'Conversation request: ' + topic + ' (' + name + ')';
+    function viaMail(){
+      var href = 'mailto:' + OWNER_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+      var w = null; try { w = window.open(href, '_blank'); } catch (err) {}
+      if (!w) { try { window.location.href = href; } catch (err) {} }
+      showDone(false, text);
+    }
+    if (FORM_ENDPOINT) {
+      fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json', 'Accept':'application/json'}, body: JSON.stringify({name:name, email:email, subject:subject, message:text})})
+        .then(function(r){ if (r.ok) showDone(true, text); else viaMail(); }, viaMail);
+    } else { viaMail(); }
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-topic]'), function(a){
+    a.addEventListener('click', function(){
+      var t = a.getAttribute('data-topic');
+      var r = form.querySelector('input[name="topic"][value="' + t + '"]');
+      if (r) r.checked = true;
+    });
+  });
+})();
+</script>
+</body>
+</html>
